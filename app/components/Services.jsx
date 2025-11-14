@@ -13,7 +13,7 @@ const services = [
     categories: [
       "Web Design",
       "Web Development",
-      "No code",
+      "No codse",
       "Webflow",
       "Style guide",
     ],
