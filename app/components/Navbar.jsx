@@ -18,13 +18,13 @@ export default function Navbar() {
       <div className="max-w-[1390px] mx-auto flex items-center justify-between">
         {/* Left - Logo */}
         <div className="flex items-center">
-          <Image
+          {/* <Image
             src={logo}
             alt="Standou-studioz Logo"
             width={205}
             height={60}
             className="object-contain w-32 sm:w-40 md:w-[205px] h-auto"
-          />
+          /> */}
         </div>
 
         {/* Center - Nav Items (Desktop) */}

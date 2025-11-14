@@ -1,12 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import user from "../../public/images/user.png";
+import user from "../../public/images/user.jpeg";
 import { Plane } from "lucide-react";
 import logo1 from "../../public/images/logos/1.png";
 import logo2 from "../../public/images/logos/2.png";
 import logo3 from "../../public/images/logos/3.png";
-import AnimatedButton from './ui/AnimatedButton'
+import AnimatedButton from './ui/AnimatedButton';
 
 export default function About() {
   return (
