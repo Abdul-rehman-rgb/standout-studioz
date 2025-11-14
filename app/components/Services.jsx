@@ -38,8 +38,12 @@ const services = [
 export default function Services() {
   return (
     <div className="max-w-[1390px] mx-auto space-y-4 pt-[120px]">
-        <AnimatedButton text="Services" Icon={Plane} href="#about" iconClassName="text-white" />
-
+      <AnimatedButton
+        text="Services"
+        Icon={Plane}
+        href="#about"
+        iconClassName="text-white"
+      />
 
       <h2 className="text-[52px] text-[#171717] font-normal mb-8 sm:mb-12 md:mb-16">
         See our all services
