@@ -16,7 +16,7 @@ export default function AnimatedButton({
   return (
     <motion.a
       href={href}
-      className={`group relative flex items-center gap-2 px-6 py-3 rounded-full text-[18px] overflow-hidden ${className}`}
+      className={`group relative flex items-center gap-2 px-0 py-3 rounded-full text-[18px] overflow-hidden ${className}`}
       onHoverStart={() => controls.start("hover")}
       onHoverEnd={() => controls.start("initial")}
     >

@@ -13,7 +13,7 @@ export default function Navbar() {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 w-full bg-white backdrop-blur-md z-50 px-4 sm:px-6 md:px-10 py-4 md:py-6"
+      className="fixed top-0 left-0 w-full bg-white backdrop-blur-md z-50 px-4 sm:px-6 md:px-10 py-4 md:py-4"
     >
       <div className="max-w-[1390px] mx-auto flex items-center justify-between">
         {/* Left - Logo */}
@@ -28,7 +28,7 @@ export default function Navbar() {
         </div>
 
         {/* Center - Nav Items (Desktop) */}
-        <div className="hidden lg:flex justify-evenly space-x-8 xl:space-x-20 text-[16px] text-[#171717] font-medium">
+        <div className="hidden lg:flex justify-evenly space-x-8 xl:space-x-50 text-[16px] text-[#171717] font-medium">
           <a href="#" className="hover:text-gray-600 transition">
             Home
           </a>
@@ -43,7 +43,6 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Right - Buttons (Desktop) */}
         <div className="hidden md:flex justify-end items-center space-x-3">
           <a
             href="#"
@@ -54,28 +53,30 @@ export default function Navbar() {
               0
             </span>
           </a>
-          <a
-            href="#"
-            className="group relative flex items-center gap-2 px-4 lg:px-6 py-2 lg:py-3 bg-black border border-black text-white rounded-full text-sm lg:text-[18px] overflow-hidden"
-          >
-            {/* Top layer (visible initially) */}
-            <span className="absolute inset-0 flex items-center justify-center transition-transform duration-300 transform group-hover:-translate-y-full">
-              Contact
-            </span>
+<a
+  href="/contact"
+  className="group relative flex items-center gap-3 px-4 lg:px-6 py-2 lg:py-3 bg-black border border-black text-white rounded-full text-sm lg:text-[18px] overflow-hidden"
+>
+  {/* Text wrapper with fixed height */}
+  <span className="relative overflow-hidden h-[20px] lg:h-[26px] flex items-center">
+    <span className="transition-transform duration-300 transform group-hover:-translate-y-full block">
+      Contact
+    </span>
 
-            {/* Bottom layer (hidden below initially) */}
-            <span className="absolute inset-0 flex items-center justify-center transition-transform duration-300 transform translate-y-full group-hover:translate-y-0">
-              Contact
-            </span>
+    <span className="absolute top-full left-0 transition-transform duration-300 transform group-hover:-translate-y-full block">
+      Contact
+    </span>
+  </span>
 
-            {/* Icon */}
-            <span className="p-1 rounded-full bg-white group-hover:bg-black transition-colors duration-300 ml-2">
-              <Plane className="w-3 h-3 lg:w-4 lg:h-4 text-black group-hover:text-white transition-colors duration-300" />
-            </span>
-          </a>
+  {/* Icon */}
+  <span className="p-1 rounded-full bg-white group-hover:bg-black transition-colors duration-300 flex items-center justify-center">
+    <Plane className="w-3 h-3 lg:w-4 lg:h-4 text-black group-hover:text-white transition-colors duration-300" />
+  </span>
+</a>
+
+
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden p-2 text-[#171717]"
@@ -85,7 +86,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -117,7 +117,7 @@ export default function Navbar() {
                 </span>
               </a>
               <a
-                href="#"
+                href="/contact"
                 className="group relative flex items-center gap-2 px-4 py-2 bg-black border border-black text-white rounded-full text-sm overflow-hidden"
               >
                 <span className="absolute inset-0 flex items-center justify-center transition-transform duration-300 transform group-hover:-translate-y-full">

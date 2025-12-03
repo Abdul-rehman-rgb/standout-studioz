@@ -57,7 +57,7 @@ export default function Works() {
         </p>
         </div>
        
-        <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-10">
+        <div className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-10">
         <div className="max-w-[1390px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
       {images.map((img, i) => (
         <motion.div
@@ -77,7 +77,7 @@ export default function Works() {
         </motion.div>
       ))}
     </div>
-        </section>
+        </div>
       </div>
     </section>
   );

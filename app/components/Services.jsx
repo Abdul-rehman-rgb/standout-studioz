@@ -2,105 +2,93 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import img1 from "../../public/images/1.jpg";
+import { Plane, Plus, Minus } from "lucide-react";
 import AnimatedButton from "./ui/AnimatedButton";
-import { Plane } from "lucide-react";
+import Heading from "./ui/Heading";
 
 const services = [
   {
     title: "Web Design & Development",
-    image: img1,
-    categories: [
-      "Web Design",
-      "Web Development",
-      "No codse",
-      "Webflow",
-      "Style guide",
-    ],
+    image: "/images/1.jpg",
+    categories: ["Web Design", "Web development", "No code", "Webflow", "Style guide"],
   },
   {
     title: "UX Strategy & Research",
-    image: img1,
-    categories: [],
+    image: "/images/1.jpg",
+    categories: ["Web Design", "Web development", "No code", "Webflow", "Style guide"],
   },
   {
     title: "Mobile App Design",
-    image: img1,
-    categories: [],
+    image: "/images/1.jpg",
+    categories: ["Web Design", "Web development", "No code", "Webflow", "Style guide"],
   },
   {
     title: "Branding & Identity",
-    image: img1,
-    categories: [],
+    image: "/images/1.jpg",
+    categories: ["Web Design", "Web development", "No code", "Webflow", "Style guide"],
   },
 ];
 
 export default function Services() {
   return (
-    <div className="max-w-[1390px] mx-auto space-y-4 pt-[120px]">
-      <AnimatedButton
-        text="Services"
-        Icon={Plane}
-        href="#about"
-        iconClassName="text-white"
-      />
+    <div className="max-w-[1390px] mx-auto space-y-4 pt-[120px] text-white">
+      <AnimatedButton text="Services" Icon={Plane} href="#about" className="text-black" iconSpanClassName="text-white" />
 
-      <h2 className="text-[52px] text-[#171717] font-normal mb-8 sm:mb-12 md:mb-16">
-        See our all services
-      </h2>
+      <Heading text="See our all services" />
+
       {services.map((service, i) => (
         <motion.div
           key={i}
-          className="border border-gray-200 rounded-lg overflow-hidden cursor-pointer"
-          initial={{ height: 60 }}
-          whileHover={{ height: 300 }} // enough to show image + categories
-          transition={{ type: "spring", stiffness: 200, damping: 20 }}
+          className="group rounded-2xl overflow-hidden cursor-pointer border-b"
+          initial={{ height: 90 }}
+          whileHover={{ height: 260 }}
+          transition={{ type: "spring", stiffness: 200, damping: 22 }}
         >
-          <div className="flex items-center h-full px-4">
-            {/* Left index */}
-            <div className="mr-4 text-gray-400 font-mono">
+          <div className="flex items-start px-6 py-6 h-full gap-6 relative">
+            <div className="text-gray-500 text-[18px] font-mono min-w-[70px]">
               ({String(i + 1).padStart(2, "0")})
             </div>
 
-            {/* Main content */}
-            <div className="flex-1 flex flex-col justify-center">
-              <h3 className="font-semibold">{service.title}</h3>
+            <div className="flex-1 text-[20px] group-hover:text-[32px] leading-tight font-medium transition-all duration-300 tracking-[-1px] text-black">
+              {service.title}
+            </div>
 
-              {/* Extra content revealed on hover */}
-              <motion.div
-                initial={{ opacity: 0, maxHeight: 0 }}
-                whileHover={{ opacity: 1, maxHeight: 500 }} // smooth expand
-                transition={{ duration: 0.3 }}
-                className="mt-2 overflow-hidden"
-              >
-                {service.image && (
-                  <div className="w-full h-40 relative mb-2">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover rounded"
-                    />
-                  </div>
-                )}
+            <div className="flex gap-6 opacity-0 pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-x-0 translate-x-6 transition-all duration-500">
+              {service.image && (
+                <div className="w-[200px] h-[150px] relative rounded-xl overflow-hidden bg-[#ffffff]">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    width={300}
+                    height={200}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+              )}
 
-                {service.categories.length > 0 && (
-                  <div className="flex flex-wrap gap-2">
+              {service.categories.length > 0 && (
+                <div className="flex flex-col">
+                  <p className="text-[18px] mb-[8px] text-[#171717] font-medium tracking-[-1px] opacity-70">
+                    Categories
+                  </p>
+                  <div className="flex flex-wrap gap-3">
                     {service.categories.map((cat, idx) => (
                       <span
                         key={idx}
-                        className="px-2 py-1 bg-gray-100 text-gray-800 rounded-md text-sm"
+                        className="px-3 py-1 text-[15px] bg-gray-200 text-[#171717] font-medium rounded-[8px]"
                       >
                         {cat}
                       </span>
                     ))}
                   </div>
-                )}
-              </motion.div>
+                </div>
+              )}
             </div>
 
-            {/* Right icon */}
-            <div className="ml-4 text-gray-400">→</div>
+            <div className="ml-auto flex items-center relative w-[22px]">
+              <Plus size={22} className="text-black opacity-50 group-hover:opacity-0 transition-all duration-300" />
+              <Minus size={22} className="absolute text-black opacity-0 group-hover:opacity-100 transition-all duration-300" />
+            </div>
           </div>
         </motion.div>
       ))}
