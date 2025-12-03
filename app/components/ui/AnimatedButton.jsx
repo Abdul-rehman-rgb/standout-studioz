@@ -2,21 +2,27 @@
 
 import { motion, useAnimation } from "framer-motion";
 import { Plane } from "lucide-react";
-import { useEffect } from "react";
 
-export default function AnimatedButton({ text = "About Us", Icon = Plane, href = "#" }) {
+export default function AnimatedButton({
+  text = "About Us",
+  Icon = Plane,
+  href = "#",
+  className = "",       // Button classes
+  iconClassName = "",   // Icon classes
+  iconSpanClassName = "", // Optional icon span classes
+}) {
   const controls = useAnimation();
 
   return (
     <motion.a
       href={href}
-      className="group relative flex items-center gap-2 px-6 py-3 text-black rounded-full text-[18px] overflow-hidden"
+      className={`group relative flex items-center gap-2 px-0 py-3 rounded-full text-[18px] overflow-hidden ${className}`}
       onHoverStart={() => controls.start("hover")}
       onHoverEnd={() => controls.start("initial")}
     >
       {/* ICON */}
       <motion.span
-        className="relative z-20 p-1 rounded-full bg-black ml-2"
+        className={`relative z-20 p-1 rounded-full ml-2 bg-black flex items-center justify-center ${iconSpanClassName}`}
         variants={{
           initial: { rotateX: 0 },
           hover: { rotateX: 180 },
@@ -24,10 +30,10 @@ export default function AnimatedButton({ text = "About Us", Icon = Plane, href =
         animate={controls}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <Icon className="w-4 h-4 text-white" />
+        <Icon className={`w-4 h-4 ${iconClassName}`} />
       </motion.span>
 
-      {/* TEXT ANIMATION */}
+      {/* TEXT */}
       <span className="relative overflow-hidden w-[100px] h-[24px] flex items-center">
         {/* Default Text */}
         <motion.span
