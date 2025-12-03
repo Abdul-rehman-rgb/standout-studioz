@@ -20,8 +20,7 @@ export default function Home() {
       <AppleCardsShowcase />
 
       <div className="bg-[#111418]">
-      <HeroParallaxSection />
-
+        <HeroParallaxSection />
       </div>
       <Footer />
     </main>

@@ -13,7 +13,7 @@ import StatCard from "./ui/StatCard";
 export default function About() {
   return (
     <Section bg="bg-[#fafafa]" text="text-center">
-        <div className="flex flex-col sm:flex-row justify-between items-start gap-4 sm:gap-6 mb-8 sm:mb-12 md:mb-16">
+        <div className="flex flex-col sm:flex-row justify-between items-start gap-4 sm:gap-6 mb-8 sm:mb-12 md:mb-16 max-sm:justify-center max-sm:items-center">
           {/* Small Column */}
           <div className="shrink-0 w-full sm:w-[200px] md:w-[250px] lg:w-[400px] flex flex-col gap-4 sm:gap-6">
             <AnimatedButton

@@ -4,6 +4,7 @@ import Image from "next/image";
 import logo from "../../public/images/logo.png";
 import { Plane, Menu, X } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,18 +30,18 @@ export default function Navbar() {
 
         {/* Center - Nav Items (Desktop) */}
         <div className="hidden lg:flex justify-evenly space-x-8 xl:space-x-50 text-[16px] text-[#171717] font-medium">
-          <a href="#" className="hover:text-gray-600 transition">
+          <Link href="/" className="hover:text-gray-600 transition">
             Home
-          </a>
-          <a href="#" className="hover:text-gray-600 transition">
+          </Link>
+          <Link href="/about" className="hover:text-gray-600 transition">
             About
-          </a>
-          <a href="#" className="hover:text-gray-600 transition">
+          </Link>
+          <Link href="/projects" className="hover:text-gray-600 transition">
             Projects
-          </a>
-          <a href="#" className="hover:text-gray-600 transition">
+          </Link>
+          <Link href="/blog" className="hover:text-gray-600 transition">
             Blog
-          </a>
+          </Link>
         </div>
 
         <div className="hidden md:flex justify-end items-center space-x-3">
@@ -53,7 +54,7 @@ export default function Navbar() {
               0
             </span>
           </a>
-<a
+<Link
   href="/contact"
   className="group relative flex items-center gap-3 px-4 lg:px-6 py-2 lg:py-3 bg-black border border-black text-white rounded-full text-sm lg:text-[18px] overflow-hidden"
 >
@@ -72,7 +73,7 @@ export default function Navbar() {
   <span className="p-1 rounded-full bg-white group-hover:bg-black transition-colors duration-300 flex items-center justify-center">
     <Plane className="w-3 h-3 lg:w-4 lg:h-4 text-black group-hover:text-white transition-colors duration-300" />
   </span>
-</a>
+</Link>
 
 
         </div>
@@ -94,18 +95,18 @@ export default function Navbar() {
           className="md:hidden mt-4 pb-4 border-t border-gray-200"
         >
           <div className="flex flex-col space-y-4 pt-4">
-            <a href="#" className="text-[#171717] font-medium hover:text-gray-600 transition">
+            <Link href="/" className="text-[#171717] font-medium hover:text-gray-600 transition">
               Home
-            </a>
-            <a href="#" className="text-[#171717] font-medium hover:text-gray-600 transition">
+            </Link>
+            <Link href="/about" className="text-[#171717] font-medium hover:text-gray-600 transition">
               About
-            </a>
-            <a href="#" className="text-[#171717] font-medium hover:text-gray-600 transition">
+            </Link>
+            <Link href="/projects" className="text-[#171717] font-medium hover:text-gray-600 transition">
               Projects
-            </a>
-            <a href="#" className="text-[#171717] font-medium hover:text-gray-600 transition">
+            </Link>
+            <Link href="/blog" className="text-[#171717] font-medium hover:text-gray-600 transition">
               Blog
-            </a>
+            </Link>
             <div className="flex items-center gap-4 pt-2">
               <a
                 href="#"
@@ -116,7 +117,7 @@ export default function Navbar() {
                   0
                 </span>
               </a>
-              <a
+              <Link
                 href="/contact"
                 className="group relative flex items-center gap-2 px-4 py-2 bg-black border border-black text-white rounded-full text-sm overflow-hidden"
               >
@@ -129,7 +130,7 @@ export default function Navbar() {
                 <span className="p-1 rounded-full bg-white group-hover:bg-black transition-colors duration-300 ml-2">
                   <Plane className="w-3 h-3 text-black group-hover:text-white transition-colors duration-300" />
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>
