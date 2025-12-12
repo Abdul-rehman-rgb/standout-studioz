@@ -5,6 +5,7 @@ import logo2 from "../../public/images/logos/2.png";
 import logo3 from "../../public/images/logos/3.png";
 import AnimatedButton from "./ui/AnimatedButton";
 import { Plane } from "lucide-react";
+import LogoLoop from "../../components/LogoLoop";
 
 import img1 from "../../public/images/1.jpg";
 import img2 from "../../public/images/1.jpg";
@@ -18,6 +19,8 @@ const images = [img1, img2, img3, img4, img5, img6, img4, img5, img6];
 
 const works = [logo1, logo2, logo3, logo1, logo2, logo3];
 
+const logos = works.map((img, i) => ({ src: img.src, alt: `Logo ${i + 1}` }));
+
 export default function Works() {
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-black text-white text-center px-4 sm:px-6 md:px-8 lg:px-10">
@@ -26,7 +29,7 @@ export default function Works() {
           Worked with
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-60 slider">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-60 slider">
           {works.map((src, i) => (
             <Image
               key={i}
@@ -37,8 +40,12 @@ export default function Works() {
               className="object-contain"
             />
           ))}
-        </div>
+        </div> */}
+        <div className="max-w-[1280px] mx-auto">
+        <LogoLoop logos={logos} />
       </div>
+      </div>
+      
       <div>
         <div className="flex flex-col items-center mt-20">
           <AnimatedButton
