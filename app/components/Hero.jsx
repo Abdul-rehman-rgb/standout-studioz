@@ -7,7 +7,12 @@ import UserCard from "./ui/UserCard";
 
 export default function Hero() {
   return (
-    <Section px="px-4 sm:px-6 md:px-8 lg:px-8" maxW="max-w-[1440px]" py="mt-20 sm:mt-24 md:mt-30" className="py-0">
+    <Section
+      px="px-4 sm:px-6 md:px-8 lg:px-8"
+      maxW="max-w-[1440px]"
+      py="mt-20 sm:mt-24 md:mt-30"
+      className="py-0"
+    >
       <div
         className="relative min-h-[60vh] sm:h-[70vh] md:h-[70vh] w-full bg-cover bg-center bg-no-repeat overflow-hidden rounded-2xl sm:rounded-3xl md:rounded-4xl"
         style={{ backgroundImage: `url(${bg.src})` }}
@@ -44,18 +49,17 @@ export default function Hero() {
             <div className="w-full md:w-[460px] text-[#b0b0b0] text-sm sm:text-base md:text-lg">
               <p>
                 <span className="font-semibold text-white text-base sm:text-lg md:text-[20px] leading-[24px] md:leading-[28px]">
-                  A creative studio crafting
+                  A csreative studio crafting
                 </span>{" "}
                 bold, user-focused digital experiences. At Kenzo, we blend
                 strategy, design, and innovation to help brands stand out and
                 grow.
               </p>
             </div>
-
-<div>
-            <UserCard title="CEO" subtitle="At Standout Studio" />
-    
-  </div>          </div>
+            <div>
+              <UserCard title="CEO" subtitle="At Standout Studio" />
+            </div>{" "}
+          </div>
         </div>
       </div>
     </Section>
